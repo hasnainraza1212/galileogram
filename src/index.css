@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size:62.5%px !important;
+}
+body{
+  padding: 4rem 5rem;
+  min-width: 30rem;
+}
+.app{
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+
+/* base styles & title */
+
+.title h1{
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+.title h2, .title p{
+  text-align: center;
+}
+.title h2{
+  margin-top: 6rem;
+  font-size: 2.6rem;
+}
+
+/* input container */
+.inputContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 0 !important;
+}
+/* upload icon */
+
+#fileInput{
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  background-color: red !important;
+}
+#labelInputImage {
+  background-color: rgb(167, 167, 167);
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 3rem;
+
+}
+#labelInputImage{
+  font-size: 5rem;
+}
+#InvalidImg{
+  position: absolute;
+  bottom: 0px !important;
+  margin: 0;
+}
+
+/* upload form styles */
+
+
+/* progress bar styles */
+.progress{
+  height: .5rem;
+  background-color: rgb(26, 255, 0);
+  border-radius: .5rem;
+}
+
+/* image grid styles */
+
+
+/* modal styles */
+
+
+
+.photoGallery{
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.photo img{
+  width: 100%;
+  height: 100%;
+  border-radius: .3rem;
+}
+@media screen and (max-width: 768px) {
+  .photoGallery{
+      flex-direction: column;
+  }   
+  body{
+    padding: 4rem 1.5rem;
+  }
+}
