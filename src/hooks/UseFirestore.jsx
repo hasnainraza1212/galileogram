@@ -1,11 +1,11 @@
 import {useState, useEffect}  from 'react'
-import { db, onSnapshot, orderBy, query, collection } from '../firebase/config'
-const UseFirestore = (allData) => {
+import { db, onSnapshot, orderBy, query, collection, limit } from '../firebase/config'
+const UseFirestore = (allData,  limiter) => {
     const [docs, setDocs] = useState([])
 
     useEffect(()=>{
         try{
-            const q = query(collection(db, allData), orderBy('timeStamps', 'desc'))
+            const q = query(collection(db, allData), orderBy('timeStamps', 'desc'), limit(limiter))
             const unsub = onSnapshot(q, (snap) => {
              let documents = [];
              snap.forEach((doc)=>{
@@ -22,6 +22,9 @@ const UseFirestore = (allData) => {
 
     },[collection])
   return {docs}
+
+
+  
 }
 
 export { UseFirestore}

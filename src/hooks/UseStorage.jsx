@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { storage, ref, uploadBytesResumable, getDownloadURL, db,addDoc, collection, serverTimestamp } from "../firebase/config";
-
 const useStorage = (file) => {
   const [urlError, setUrlError] = useState(null);
   const [progress, setProgress] = useState(0);

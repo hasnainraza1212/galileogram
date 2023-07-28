@@ -5,7 +5,7 @@ import ProgressBar from './ProgressBar';
 const UploadForms = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState('');
-  const allowedTypes = ['image/jpeg', 'image/png'];
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/avif', 'image/webp', 'image/gif'];
   const isFirstRender = useRef(true);
 
   const handleFileInputChange = (e) => {
