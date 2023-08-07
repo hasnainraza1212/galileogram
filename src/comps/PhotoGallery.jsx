@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { UseFirestore } from '../hooks/UseFirestore';
 useEffect
 const PhotoGallery = () => {
-  let [limiter, limiterUpdate] = useState('20')
+  let [limiter, limiterUpdate] = useState('50')
 
   const { docs } = UseFirestore('images', limiter);
   return (
