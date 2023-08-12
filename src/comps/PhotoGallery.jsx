@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { UseFirestore } from '../hooks/UseFirestore';
 useEffect
 const PhotoGallery = () => {
-  let [limiter, limiterUpdate] = useState(1n);
+  let [limiter, limiterUpdate] = useState(20);
   
   // useEffect(() => {
   //   const handleScroll = () => {

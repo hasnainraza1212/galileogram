@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@font-face {
+  font-family:Raleway ;
+  src: url('./../public/Raleway.ttf');
+}
+
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
+  font-family: Raleway !important;
 }
 html{
   font-size:62.5%px !important;
@@ -14,12 +20,35 @@ body{
 
 
 
-/* base styles & title */
+.menu{
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem !important;
 
+}
+.menu div{
+  margin-right: 4rem !important;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color:  rgb(35, 35, 216);
+}
+/* base styles & title */
+.title{
+display: flex;
+justify-content: space-between;
+max-width: 120rem;
+margin: auto !important;
+
+}
 .title h1{
-  font-size: 1.2rem;
+  font-size: 2.3rem;
   letter-spacing: 2px;
-  font-weight: normal;
+  font-weight: 800;
+  color:  rgb(35, 35, 216);
+  margin-left: 3rem !important;
+}
+.title h1::first-letter{
+  font-size: 4.5rem !important
 }
 .title h2, .title p{
   text-align: center;
@@ -28,7 +57,6 @@ body{
   margin-top: 6rem;
   font-size: 2.6rem;
 }
-
 /* input container */
 .inputContainer{
   width: 100%;
@@ -38,9 +66,9 @@ body{
   flex-direction: column;
   position: relative;
   padding: 0 !important;
+  height: auto;
 }
 /* upload icon */
-
 #fileInput{
   visibility: hidden;
   width: 0px;
@@ -52,36 +80,23 @@ body{
   justify-content: center;
   /* border-radius: 50%; */
   /* margin-bottom: 3rem; */
-
 }
 #labelInputImage{
-  font-size: 5rem;
+  cursor: pointer;
 }
 #InvalidImg{
-  /* position: absolute; */
   bottom: 0px !important;
   margin: 0;
 }
-
 /* upload form styles */
-
-
 /* progress bar styles */
 .progress{
   height: .5rem;
   background-color: rgb(26, 255, 0);
   border-radius: .5rem;
 }
-
 /* image grid styles */
-
-
 /* modal styles */
-
-
-
-
-
   *{
   box-sizing: border-box;
   margin: 0 !important;
@@ -102,22 +117,105 @@ body{
   display:block;
   width: 100%;
   border-radius: 1rem;
+ box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
  }
- 
 .uploadBox{
 margin: 2rem 0 !important;
-
 }
-
-
+.file-upload-area{  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.uploadBox{
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  width: 85%;
+  padding: 30px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-style: dashed;
+  border-color: rgb(236, 235, 235);
+  border-width: 2px;
+}
+.uploadOuterBox{
+  background-color:rgb(232, 231, 231) ;
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  margin: 50px 0 !important;
+  margin-top: 2rem !important;
+  max-width:700px;
+}
+.uploadIcon{
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem !important;
+}
+.descriptionUploadImage{
+  width: 80% !important;
+  margin-top: 20px !important;
+  color: rgb(87, 87, 87);
+}
+.uploadText{
+font-weight: 700;
+font-size: 1.2rem;
+color: rgb(56, 56, 56);
+}
+.browseFiles{
+  background-color: rgb(59, 59, 235);
+  padding: 15px !important;
+  margin-top: 20px !important;
+  color: white !important;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
 @media screen and (max-width:768px){
 	.masonry-container {
  		column-count: 2;
 	}
+  .uploadOuterBox{
+    background-color:rgb(232, 231, 231) ;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    margin: 50px 0 !important;
+    margin-top: 100px !important;
+  }
+  .title{
+    position: relative;
+    padding: 0 !important;
+  }
+  .title  h1{
+    font-size: 1.3rem;
+    margin-top: 1.4rem !important;
+  }
+  .title  h1::first-letter{
+    font-size: 2rem !important;
+  }
+ .uploadOuterBox{
+  margin: 2rem !important;
+ }
+ .descriptionUploadImage{
+  visibility: hidden;
+  height: 0px;
+ }
+
 }
 
 @media screen and (max-width:576px){
 	.masonry-container {
  		column-count: 1;
 	}
+}
+
+@media screen and (max-width:1080px){
+  .menu{
+    display: none;
+  }
 }
