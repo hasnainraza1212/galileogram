@@ -5,7 +5,7 @@ const UseFirestore = (allData,  limiter) => {
 
     useEffect(()=>{
         try{
-            const q = query(collection(db, allData), orderBy('timeStamps', 'desc'), limit(limiter))
+            const q = query(collection(db, allData), orderBy('timeStamps', 'desc'), limit(`${limiter}`))
             const unsub = onSnapshot(q, (snap) => {
              let documents = [];
              snap.forEach((doc)=>{

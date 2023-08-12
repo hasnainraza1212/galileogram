@@ -1,7 +1,10 @@
 import React, { useState, useEffect,useRef } from 'react';
 import '.././index.css';
 import ProgressBar from './ProgressBar';
+import { message, Upload } from 'antd';
 
+import { InboxOutlined } from '@ant-design/icons';
+const { Dragger } = Upload;
 const UploadForms = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState('');
@@ -18,6 +21,27 @@ const UploadForms = () => {
       setError('Invalid format');
     }
   };
+
+
+
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    const { file } = event.dataTransfer;
+    console.log(file)
+  
+  }
+    
+    const handleDragOver = (event) => {
+      event.preventDefault()
+    }
+  
+     const handleDragStart = (event) => {
+          event.dataTransfer.setData("text/plain", event.target.id)
+      }
+
+
+
 
   // This useEffect will run after the first render
   useEffect(() => {
@@ -37,11 +61,21 @@ const UploadForms = () => {
           id='fileInput'
         />{' '}
         <label htmlFor='fileInput' id='labelInputImage'>
-          <p>+</p>
+    <Dragger  onDrop = {handleDrop} onDragOver = {handleDragOver} onDragStart={handleDragStart} className='uploadBox'>
+    <p className="ant-upload-drag-icon">
+      <InboxOutlined />
+    </p>
+    <p className='ant-upload-text'>Click or drag file to this area to upload</p>
+    <p className="ant-upload-hint">
+      Support for a single or bulk upload. Strictly prohibited from uploading company data or other
+      banned files.
+    </p>
+  </Dragger>
         </label>
         <p id='InvalidImg'>{error}</p>
       </div>
       {file && <ProgressBar file={file} updateFile={setFile} />}
+
     </form>
   );
 };

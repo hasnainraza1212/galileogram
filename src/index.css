@@ -45,24 +45,20 @@ body{
   visibility: hidden;
   width: 0px;
   height: 0px;
-  background-color: red !important;
 }
 #labelInputImage {
-  background-color: rgb(167, 167, 167);
-  width: 5rem;
-  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  margin-bottom: 3rem;
+  /* border-radius: 50%; */
+  /* margin-bottom: 3rem; */
 
 }
 #labelInputImage{
   font-size: 5rem;
 }
 #InvalidImg{
-  position: absolute;
+  /* position: absolute; */
   bottom: 0px !important;
   margin: 0;
 }
@@ -108,7 +104,10 @@ body{
   border-radius: 1rem;
  }
  
+.uploadBox{
+margin: 2rem 0 !important;
 
+}
 
 
 @media screen and (max-width:768px){
